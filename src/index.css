@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Mea+Culpa&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+.ballet-Name {
+  font-family: "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  @apply bg-zinc-800 text-zinc-800
+}
+
+.menu-btn {
+  @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15 cursor-pointer active:scale-90
+  
+}
+
+.navbar {
+  @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/10 scale-90 isolate blur-sm opacity-0 invisible md:static md:flex md:items-center md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur
+}
+
+.navbar.active {
+  @apply opacity-100 scale-100 blur-0 visible
+}
+
+.nav-link{
+  @apply grid items-center h-8 px-2 text-sm font-medium tracking-wide text-zinc-50/50 hover:text-zinc-50
+}
+
+.nav-link.active{
+  @apply text-zinc-900 duration-500
+}
+
+.navbar .active-box{
+  @apply absolute bg-white rounded-lg -z-10 transition-[top,left] duration-500
+}
+.container{
+  @apply px-4 mx-auto lg:px-8 xl:max-w-6xl
+}
+
