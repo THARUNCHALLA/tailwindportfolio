@@ -5,6 +5,15 @@ import { toast } from "react-toastify";
 const ContactPage = () => {
     const [data, setData] = useState({ name: '', email: '', message: '', subject: '' });
     const [popup, setPopup] = useState({ show: false, message: '', type: '' });
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 768);
+        check();
+        window.addEventListener('resize', check);
+        return () => window.removeEventListener('resize', check);
+    }, []);
+
     const sendEmail = () => {
         window.location.href = 'mailto:challatharun31@gmail.com';
     }
@@ -14,7 +23,6 @@ const ContactPage = () => {
             ...prev,
             [name]: value
         }));
-        console.log(name);
     };
 
     const handleSubmit = async (e) => {
@@ -23,11 +31,11 @@ const ContactPage = () => {
             const res = await axios.post('https://email-api-veew.onrender.com/submit-form', data);
             if (res.status === 200) {
                 setPopup({ show: true, message: 'Message sent successfully!', type: 'success' });
-                toast.success('Message sent successfully!')
+                { !isMobile && toast.success('Message sent successfully!') }
                 setData({ name: '', email: '', message: '', subject: '' });
             }
         } catch (err) {
-            toast.error('Failed to send message. Try again.')
+            { !isMobile && toast.error('Failed to send message. Try again.') }
             setPopup({ show: true, message: 'Failed to send message. Try again.', type: 'error' });
         }
         setTimeout(() => {
