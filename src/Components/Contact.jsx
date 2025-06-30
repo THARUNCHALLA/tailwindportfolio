@@ -30,7 +30,7 @@ const ContactPage = () => {
             toast.error('Failed to send message. Try again.')
             setPopup({ show: true, message: 'Failed to send message. Try again.', type: 'error' });
         }
-            setTimeout(() => {
+        setTimeout(() => {
             setPopup({ show: false, message: '', type: '' });
         }, 1000);
     };
@@ -84,11 +84,12 @@ const ContactPage = () => {
                     </div>
                     {popup.show ? (
                         <div
-                            className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-md text-white shadow-lg block md:hidden
-            ${popup.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
+                            className={`fixed bottom-5 inset-x-0 mx-auto w-full max-w-xs px-6 py-3 rounded-md text-white shadow-lg block md:hidden
+    ${popup.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
                         >
-                           {popup.message}
+                            {popup.message}
                         </div>
+
                     ) : <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
                         <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Send a Message</h2>
                         <form className="space-y-6" onSubmit={handleSubmit}>
