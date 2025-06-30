@@ -1,6 +1,7 @@
 import { FaFacebook, FaGithub, FaHome, FaInstagram, FaLinkedin, FaMailBulk, FaPhone } from "react-icons/fa";
 import { useState } from 'react';
 import axios from 'axios';
+import { toast } from "react-toastify";
 const ContactPage = () => {
     const [data, setData] = useState({ name: '', email: '', message: '', subject: '' });
     const [popup, setPopup] = useState({ show: false, message: '', type: '' });
@@ -22,15 +23,16 @@ const ContactPage = () => {
             const res = await axios.post('https://email-api-veew.onrender.com/submit-form', data);
             if (res.status === 200) {
                 setPopup({ show: true, message: 'Message sent successfully!', type: 'success' });
+                toast.success('Message sent successfully!')
                 setData({ name: '', email: '', message: '', subject: '' });
             }
         } catch (err) {
+            toast.error('Failed to send message. Try again.')
             setPopup({ show: true, message: 'Failed to send message. Try again.', type: 'error' });
         }
-
-        setTimeout(() => {
+            setTimeout(() => {
             setPopup({ show: false, message: '', type: '' });
-        }, 2000);
+        }, 1000);
     };
 
 
@@ -82,10 +84,10 @@ const ContactPage = () => {
                     </div>
                     {popup.show ? (
                         <div
-                            className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-md text-white shadow-lg
+                            className={`fixed top-5 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-md text-white shadow-lg block md:hidden
             ${popup.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
                         >
-                            {popup.message}
+                           {popup.message}
                         </div>
                     ) : <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
                         <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Send a Message</h2>

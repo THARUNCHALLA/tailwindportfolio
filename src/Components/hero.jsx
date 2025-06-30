@@ -62,7 +62,7 @@ const Hero = () => {
               className="w-14 h-14 rounded-lg overflow-hidden border-2 border-blue-500 shadow-lg"
             >
               <img
-                src="/Assets/Tharunchalla.jpg"
+                src="/Assets/tharunchalla.jpg"
                 alt="Tharun Challa"
                 width={56}
                 height={56}
