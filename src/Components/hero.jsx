@@ -117,7 +117,7 @@ const Hero = () => {
           <div className="relative">
             <div className="w-[320px] h-[320px] rounded-full overflow-hidden shadow-2xl border-4 border-blue-500/30 relative">
               <img
-                src="/Assets/challatharun.jpg"
+                src="/Assets/tharunchalla.jpg"
                 alt="Tharun Challa"
                 className="w-full h-full object-cover"
               />
