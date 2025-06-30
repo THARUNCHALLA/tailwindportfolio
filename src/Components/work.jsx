@@ -24,14 +24,6 @@ const Work = ({ user }) => {
                         >
                             View Project
                         </a>
-                        <a
-                            href={user.source}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-md transition-colors"
-                        >
-                            Source Code
-                        </a>
                     </div>
                 </div>
             </div>

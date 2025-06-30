@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <header className="fixed top-0 left-0 w-full h-20 z-40 text-white flex items-center bg-gradient-to-b from-zinc-900 to-zinc-900/0">
             <div className="w-full px-4 flex items-center justify-between md:px-6 md:grid md:grid-cols-[1fr,3fr]">
-                <h4 className="ballet-Name text-xs font-bold md:text-xl tracking-tight leading-none drop-shadow-md" onClick={Header}>
+                <h4 className="ballet-Name text-xs font-bold md:text-xl tracking-tight leading-none drop-shadow-md cursor-pointer" onClick={Header}>
                     Tharun Challa
                 </h4>
                 <div className="relative md:justify-self-end text-sm md:text-xl">

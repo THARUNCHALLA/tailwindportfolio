@@ -4,7 +4,7 @@ const projectData = [
     {
         image1:"/Assets/Screenshot 2023-12-24 184315.png",
         title: "Ecommerce Website",
-        information: "Essentially, eCommerce websites are designed to connect the right customers with products and services that can be traded over the internet. From tiny businesses to huge markets, everyone is prospering from eCommerce. username: rahul and password: rahul@2021",
+        information: "Essentially, eCommerce websites are designed to connect the right customers with products and services that can be traded over the internet. everyone is prospering from eCommerce. username: rahul and password: rahul@2021",
         view: "https://next45.ccbp.tech/",
         source: "https://github.com/THARUNCHALLA/Tharun",
         id: 1
