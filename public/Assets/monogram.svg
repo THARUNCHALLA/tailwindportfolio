@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Tharun Challa monogram</title>
+  <desc id="desc">Rounded square with stylized T and C initials</desc>
+  <rect x="2" y="2" width="116" height="116" rx="18" fill="#0f1724"/> 
+  <g transform="translate(12,18)" fill="#3b82f6" font-family="Segoe UI, Inter, Roboto, Arial" font-weight="700" font-size="64">
+    <text x="6" y="60">T</text>
+    <text x="46" y="60" fill="#60a5fa" font-weight="600">C</text>
+  </g>
+</svg>
