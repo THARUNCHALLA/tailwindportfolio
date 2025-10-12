@@ -6,7 +6,7 @@ const Hero = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/Assets/Tharun_challa.pdf';
-    link.download = 'MyResume.pdf';
+    link.download = 'Tharun_challa.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -134,7 +134,7 @@ const Hero = () => {
               }}
               className="absolute -bottom-5 -left-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700"
             >
-              <span className="text-white font-medium">1.8+ Years Experience</span>
+              <span className="text-white font-medium">1.9+ Years Experience</span>
             </motion.div>
             <motion.div
               animate={{
