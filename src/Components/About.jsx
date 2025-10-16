@@ -41,7 +41,7 @@ const About = () => {
               </h3>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                 A passionate <span className="font-semibold text-gray-800 dark:text-white">Full Stack Developer</span> with
-                <span className="font-semibold text-gray-800 dark:text-white"> 1.5+ years</span> of experience building robust web and mobile applications. I love solving real-world problems through code and delivering seamless user experiences.
+                <span className="font-semibold text-gray-800 dark:text-white"> 1.9+ years</span> of experience building robust web and mobile applications. I love solving real-world problems through code and delivering seamless user experiences.
               </p>
             </div>
 

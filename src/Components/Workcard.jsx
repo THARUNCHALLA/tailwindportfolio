@@ -12,7 +12,7 @@ const projectData = [
         image1: "/Assets/TharunEcho.png",
         title: "🎵 Tharun Echo – Music ",
         information: "Explore the musical journey of Tharun Echo, featuring original compositions, remixes, and curated playlists. Dive into a blend of genres and sonic landscapes that showcase a passion for music production and sound design", 
-        view: "https://tharunecho.netlify.app",
+        view: "https://tharuvibe.netlify.app",
         id: 2
     },
     {
