@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Assets/Tharun_challa.pdf';
+    link.href = '/Assets/Tharun_ch.pdf';
     link.download = 'Tharun_challa.pdf';
     document.body.appendChild(link);
     link.click();
