@@ -42,7 +42,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+    <section id="home" className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
       <Particles
         className="absolute top-0 left-0 w-full h-full z-0"
         options={{
