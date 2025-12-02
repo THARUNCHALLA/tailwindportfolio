@@ -28,7 +28,7 @@ const ContactPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('https://email-api-veew.onrender.com/submit-form', data);
+            const res = await axios.post('https://email-api-1-twnq.onrender.com/submit-form', data);
             if (res.status === 200) {
                 setPopup({ show: true, message: 'Message sent successfully!', type: 'success' });
                 { !isMobile && toast.success('Message sent successfully!') }
