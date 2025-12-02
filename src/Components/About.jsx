@@ -21,15 +21,14 @@ const skills = [
 
 const About = () => {
   return (
-    <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800 transition-colors duration-500">
-      <motion.div
+<section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-700 transition-colors duration-500">
+   <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
         className="max-w-5xl mx-auto space-y-12"
       >
-        {/* Intro */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -57,7 +56,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Skills */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -71,8 +69,6 @@ const About = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* Tools & Platforms */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -82,8 +78,6 @@ const About = () => {
           <h4 className="text-xl md:text-2xl font-semibold text-white mb-2">Tools & Platforms</h4>
           <p className="text-gray-200 text-md md:text-lg">Visual Studio Code, Git, GitHub, Bitbucket, Postman</p>
         </motion.div>
-
-        {/* Motivation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

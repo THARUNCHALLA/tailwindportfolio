@@ -29,7 +29,7 @@ const projectData = [
 
 const WorkCard = () => {
   return (
-    <section className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <section className="bg-gradient-to-b from-gray-700 to-gray-600 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-500">
       <div className="container mx-auto max-w-6xl">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
