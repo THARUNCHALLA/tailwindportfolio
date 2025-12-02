@@ -84,7 +84,7 @@ const ContactPage = () => {
                                 <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
                                     <FaInstagram size={24} />
                                 </a>
-                                <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
+                                <a href="https://github.com/THARUNCHALLA" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
                                     <FaGithub size={24} />
                                 </a>
                             </div>

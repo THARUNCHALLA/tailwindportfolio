@@ -1,11 +1,10 @@
 "use client";
 
-import { Canvas, useFrame,useLoader  } from "@react-three/fiber";
-import { OrbitControls, Sphere } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Sphere } from "@react-three/drei";
 import * as THREE from "three";
-import { TextureLoader } from "three";
 import { FiDownload } from "react-icons/fi";
-import { FaArrowDown, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import Particles from "react-tsparticles";
@@ -15,7 +14,7 @@ const RotatingSphere = ({ imgSrc }) => {
   const meshRef = useRef(null);
 
   useFrame(() => {
-    if (meshRef.current) meshRef.current.rotation.y += 0.002;
+    if (meshRef.current) meshRef.current.rotation.y += 0.003;
   });
 
   const texture = new THREE.TextureLoader().load(imgSrc);
@@ -43,16 +42,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+    <section id="home" className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
       <Particles
         className="absolute top-0 left-0 w-full h-full z-0"
         options={{
           fpsLimit: 60,
           particles: {
-            number: { value: 60 },
+            number: { value: 70 },
             size: { value: 3 },
-            move: { enable: true, speed: 1 },
-            links: { enable: true, distance: 150, color: "#0ea5e9", opacity: 0.3 },
+            move: { enable: true, speed: 1.2 },
+            links: { enable: true, distance: 150, color: "#0ea5e9", opacity: 0.4 },
             color: { value: "#0ea5e9" },
           },
           interactivity: {
@@ -68,38 +67,45 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-start gap-6 lg:pr-12"
         >
-          <div className="flex items-center gap-3">
-                     <motion.figure
-              whileHover={{ scale: 1.05 }}
-              className="w-14 h-14 rounded-lg overflow-hidden border-2 border-blue-500 shadow-lg"
+          <div className="flex items-center gap-3 block md:hidden">
+            <motion.figure
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500 shadow-xl"
             >
               <img
                 src="/Assets/tharunchalla.jpg"
                 alt="Tharun Challa"
-                width={56}
-                height={56}
-                className="object-cover w-full h-full"
+                className="w-full h-full object-cover"
               />
             </motion.figure>
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 px-3 py-1 bg-green-500/20 rounded-full"
+              className="flex items-center gap-2 px-3 py-1 bg-green-500/25 rounded-full backdrop-blur-sm"
             >
               <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-green-400 text-sm font-medium">
-                Available for work
-              </span>
+              <span className="text-green-400 text-sm font-medium">Available for work</span>
             </motion.div>
           </div>
 
-          <h1 className="text-white text-3xl md:text-5xl font-bold max-w-xl leading-snug">
+          <motion.h1
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-white text-3xl md:text-5xl font-extrabold max-w-xl leading-snug"
+          >
             Building <span className="text-blue-400">modern web experiences</span> that
             impress and perform
-          </h1>
+          </motion.h1>
 
-          <div className="text-gray-300 text-lg max-w-lg">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="text-gray-200 text-lg max-w-lg"
+          >
             <Typewriter
               options={{
                 strings: [
@@ -111,72 +117,61 @@ const Hero = () => {
                 loop: true,
               }}
             />
-          </div>
+          </motion.div>
 
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-4 mt-6">
             <motion.button
-              whileHover={{ y: -2 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleDownload}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 font-semibold"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-2xl font-semibold transition-all duration-300"
             >
               Download CV <FiDownload className="w-5 h-5" />
             </motion.button>
+
             <motion.button
-              whileHover={{ y: -2 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToProjects}
-              className="flex items-center gap-2 border border-gray-400 hover:bg-white hover:text-black text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 font-semibold"
+              className="flex items-center gap-2 border border-gray-400 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl shadow-2xl font-semibold transition-all duration-300"
             >
               My Work <FaArrowDown className="w-5 h-5" />
             </motion.button>
           </div>
         </motion.div>
-                 <motion.div
+
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hidden lg:flex justify-center mt-8 lg:mt-0"
         >
           <div className="relative">
-            <div className="w-[320px] h-[320px] rounded-full overflow-hidden shadow-2xl border-4 border-blue-500/30 relative">
+            <div className="w-[320px] h-[320px] rounded-full overflow-hidden shadow-2xl border-4 border-blue-500/40 relative">
               <img
                 src="/Assets/tharunchalla.jpg"
                 alt="Tharun Challa"
                 className="w-full h-full object-cover"
               />
             </div>
+
             <motion.div
-              animate={{
-                scale: [1, 1.05, 1],
-                rotate: [0, 5, -5, 0],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
+              animate={{ scale: [1, 1.07, 1], rotate: [0, 6, -6, 0] }}
+              transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
               className="absolute -bottom-5 -left-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700"
             >
               <span className="text-white font-medium">1.10+ Years Experience</span>
             </motion.div>
+
             <motion.div
-              animate={{
-                scale: [1, 1.05, 1],
-                rotate: [0, -5, 5, 0],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
+              animate={{ scale: [1, 1.07, 1], rotate: [0, -6, 6, 0] }}
+              transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
               className="absolute -top-5 -right-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700"
             >
               <span className="text-white font-medium">React Specialist</span>
             </motion.div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
