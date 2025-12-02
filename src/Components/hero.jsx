@@ -158,7 +158,7 @@ const Hero = () => {
               }}
               className="absolute -bottom-5 -left-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700"
             >
-              <span className="text-white font-medium">1.9+ Years Experience</span>
+              <span className="text-white font-medium">1.10+ Years Experience</span>
             </motion.div>
             <motion.div
               animate={{
