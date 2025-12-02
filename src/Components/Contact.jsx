@@ -53,7 +53,7 @@ const ContactPage = () => {
                         <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Personal Information</h2>
 
                         <div className="space-y-6">
-                            <a href="https://maps.app.goo.gl/T733zpaP1p7cbaBt5" target="_blank" rel="noreferrer" className="flex items-start hover:text-blue-400 transition-colors">
+                            <a href="https://maps.app.goo.gl/6voXrnRz7L7Kkwvn7" target="_blank" rel="noreferrer" className="flex items-start hover:text-blue-400 transition-colors">
                                 <FaHome className="text-white mt-1 mr-4 flex-shrink-0" size={20} />
                                 <div>
                                     <p>2-181 palukurivaripalem</p>
