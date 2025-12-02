@@ -1,7 +1,11 @@
+"use client";
+
 import { FaFacebook, FaGithub, FaHome, FaInstagram, FaLinkedin, FaMailBulk, FaPhone } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
+
 const ContactPage = () => {
     const [data, setData] = useState({ name: '', email: '', message: '', subject: '' });
     const [popup, setPopup] = useState({ show: false, message: '', type: '' });
@@ -17,6 +21,7 @@ const ContactPage = () => {
     const sendEmail = () => {
         window.location.href = 'mailto:challatharun31@gmail.com';
     }
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData((prev) => ({
@@ -40,20 +45,35 @@ const ContactPage = () => {
         }
         setTimeout(() => {
             setPopup({ show: false, message: '', type: '' });
-        }, 1000);
+        }, 2000);
     };
 
-
     return (
-        <div id="contact" className="min-h-screen bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div id="contact" className="min-h-screen bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-bold text-center mb-12">Contact Me</h1>
+                <motion.h1
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="text-4xl font-bold text-center mb-12"
+                >
+                    Contact Me
+                </motion.h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
+
+                    {/* Personal Information */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="bg-gray-800 p-8 rounded-lg shadow-lg"
+                    >
                         <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Personal Information</h2>
 
                         <div className="space-y-6">
-                            <a href="https://maps.app.goo.gl/T733zpaP1p7cbaBt5" target="_blank" rel="noreferrer" className="flex items-start hover:text-blue-400 transition-colors">
+                            <a href="https://maps.app.goo.gl/T733zpaP1p7cbaBt5" target="_blank" rel="noreferrer" className="flex items-start hover:text-blue-400 transition-transform transform hover:scale-105">
                                 <FaHome className="text-white mt-1 mr-4 flex-shrink-0" size={20} />
                                 <div>
                                     <p>2-181 palukurivaripalem</p>
@@ -61,12 +81,12 @@ const ContactPage = () => {
                                 </div>
                             </a>
 
-                            <a href="https://wa.me/919100807049" target="_blank" rel="noreferrer" className="flex items-center hover:text-blue-400 transition-colors">
+                            <a href="https://wa.me/919100807049" target="_blank" rel="noreferrer" className="flex items-center hover:text-blue-400 transition-transform transform hover:scale-105">
                                 <FaPhone className="text-white mr-4 flex-shrink-0" size={20} />
                                 <span>+91 9100807049</span>
                             </a>
 
-                            <button onClick={sendEmail} className="flex items-center hover:text-blue-400 transition-colors w-full text-left">
+                            <button onClick={sendEmail} className="flex items-center hover:text-blue-400 transition-transform transform hover:scale-105 w-full text-left">
                                 <FaMailBulk className="text-white mr-4 flex-shrink-0" size={20} />
                                 <span>challatharun31@gmail.com</span>
                             </button>
@@ -75,77 +95,101 @@ const ContactPage = () => {
                         <div className="mt-8">
                             <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
                             <div className="flex space-x-4">
-                                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
-                                    <FaFacebook size={24} />
-                                </a>
-                                <a href="https://www.linkedin.com/in/tharun-challa-a59739248/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
-                                    <FaLinkedin size={24} />
-                                </a>
-                                <a href="https://www.instagram.com/?hl=en" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
-                                    <FaInstagram size={24} />
-                                </a>
-                                <a href="https://github.com/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">
-                                    <FaGithub size={24} />
-                                </a>
+                                {[FaFacebook, FaLinkedin, FaInstagram, FaGithub].map((Icon, idx) => (
+                                    <motion.a
+                                        key={idx}
+                                        href="#"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        whileHover={{ scale: 1.2, color: "#0ea5e9" }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                        className="text-white"
+                                    >
+                                        <Icon size={24} />
+                                    </motion.a>
+                                ))}
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
+
+                    {/* Contact Form */}
                     {popup.show ? (
-                        <div
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
                             className={`fixed bottom-5 inset-x-0 mx-auto w-full max-w-xs px-6 py-3 rounded-md text-white shadow-lg block md:hidden
-    ${popup.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
+                            ${popup.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
                         >
                             {popup.message}
-                        </div>
+                        </motion.div>
 
-                    ) : <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Send a Message</h2>
-                        <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
-                            {[
-                                { name: 'name', type: 'text', label: 'Full Name' },
-                                { name: 'email', type: 'email', label: 'Email address' },
-                                { name: 'subject', type: 'text', label: 'Subject' },
-                                ,
-                            ].map(({ name, type, label }) => (
-                                <div key={name} className="relative z-0 w-full mb-5 group">
-                                    <input
-                                        type={type}
-                                        name={name}
-                                        id={name}
-                                        value={data[name]}
+                    ) : (
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="bg-gray-800 p-8 rounded-lg shadow-lg"
+                        >
+                            <h2 className="text-2xl font-semibold mb-6 border-b border-gray-700 pb-2">Send a Message</h2>
+                            <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
+                                {[
+                                    { name: 'name', type: 'text', label: 'Full Name' },
+                                    { name: 'email', type: 'email', label: 'Email address' },
+                                    { name: 'subject', type: 'text', label: 'Subject' },
+                                ].map(({ name, type, label }) => (
+                                    <div key={name} className="relative z-0 w-full mb-5 group">
+                                        <input
+                                            type={type}
+                                            name={name}
+                                            id={name}
+                                            value={data[name]}
+                                            onChange={handleChange}
+                                            placeholder=" "
+                                            required
+                                            className="
+                                              peer block py-2.5 px-0 w-full text-sm md:text-lg text-white font-italic bg-transparent
+                                              border-0 border-b-2 border-gray-300 appearance-none focus:outline-none
+                                              focus:ring-0 focus:border-blue-600 peer-placeholder-shown:border-gray-300 peer-focus:border-blue-600
+                                              transition-colors duration-300"
+                                        />
+                                        <label
+                                            htmlFor={name}
+                                            className="
+                                              absolute text-sm md:text-lg text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3
+                                              -z-10 origin-[0]
+                                              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
+                                              peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-400
+                                              transition-colors duration-300"
+                                        >
+                                            {label}
+                                        </label>
+                                    </div>
+                                ))}
+                                <div className="mb-5">
+                                    <textarea
+                                        id="messageData"
+                                        name="message"
+                                        rows="4"
+                                        value={data.message}
                                         onChange={handleChange}
-                                        placeholder=" "
+                                        placeholder="Leave your message here..."
                                         required
-                                        className="
-              peer block py-2.5 px-0 w-full text-sm md:text-lg text-white font-italic bg-transparent
-              border-0 border-b-2 border-gray-300 appearance-none focus:outline-none
-              focus:ring-0 focus:border-blue-600 peer-placeholder-shown:border-gray-300 peer-focus:border-blue-600"
-                                    />
-                                    <label
-                                        htmlFor={name}
-                                        className="
-              absolute text-sm md:text-lg text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3
-              -z-10 origin-[0]
-              peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0
-              peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-blue-600"
-                                    >
-                                        {label}
-                                    </label>
+                                        className="shadow-xs bg-gray-700 border border-gray-600 text-white text-sm md:text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 transition-colors duration-300"
+                                    ></textarea>
                                 </div>
-                            ))}
-                            <div className="mb-5">
-                                <textarea id="messageData" name="message" rows="4" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm md:text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light" placeholder="Leave your message here..." required></textarea>
-                            </div>
 
-                            <button
-                                type="submit"
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-colors"
-                            >
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                    }
+                                <motion.button
+                                    type="submit"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-300 w-full"
+                                >
+                                    Submit
+                                </motion.button>
+                            </form>
+                        </motion.div>
+                    )}
                 </div>
             </div>
         </div>

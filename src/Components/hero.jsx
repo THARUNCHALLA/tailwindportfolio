@@ -1,11 +1,10 @@
 "use client";
 
-import { Canvas, useFrame,useLoader  } from "@react-three/fiber";
-import { OrbitControls, Sphere } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Sphere } from "@react-three/drei";
 import * as THREE from "three";
-import { TextureLoader } from "three";
 import { FiDownload } from "react-icons/fi";
-import { FaArrowDown, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import Particles from "react-tsparticles";
@@ -43,7 +42,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+    <section className="relative pt-32 pb-24 overflow-hidden bg-gray-900">
+      {/* Particles Background */}
       <Particles
         className="absolute top-0 left-0 w-full h-full z-0"
         options={{
@@ -62,6 +62,7 @@ const Hero = () => {
       />
 
       <div className="container mx-auto px-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 relative z-10">
+        {/* Left Text Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -69,16 +70,14 @@ const Hero = () => {
           className="flex flex-col items-start gap-6 lg:pr-12"
         >
           <div className="flex items-center gap-3">
-                     <motion.figure
+            <motion.figure
               whileHover={{ scale: 1.05 }}
               className="w-14 h-14 rounded-lg overflow-hidden border-2 border-blue-500 shadow-lg"
             >
               <img
                 src="/Assets/tharunchalla.jpg"
                 alt="Tharun Challa"
-                width={56}
-                height={56}
-                className="object-cover w-full h-full"
+                className="w-full h-full object-cover"
               />
             </motion.figure>
             <motion.div
@@ -99,7 +98,7 @@ const Hero = () => {
             impress and perform
           </h1>
 
-          <div className="text-gray-300 text-lg max-w-lg">
+          <div className="text-gray-200 text-lg max-w-lg">
             <Typewriter
               options={{
                 strings: [
@@ -132,7 +131,9 @@ const Hero = () => {
             </motion.button>
           </div>
         </motion.div>
-                 <motion.div
+
+        {/* Right Image Section */}
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -156,7 +157,7 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "reverse",
               }}
-              className="absolute -bottom-5 -left-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700"
+              className="absolute -bottom-5 -left-5 bg-gray-800 p-3 rounded-lg shadow-lg border border-gray-700"
             >
               <span className="text-white font-medium">1.10+ Years Experience</span>
             </motion.div>
@@ -170,13 +171,12 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "reverse",
               }}
-              className="absolute -top-5 -right-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700"
+              className="absolute -top-5 -right-5 bg-gray-800 p-3 rounded-lg shadow-lg border border-gray-700"
             >
               <span className="text-white font-medium">React Specialist</span>
             </motion.div>
           </div>
         </motion.div>
-
       </div>
     </section>
   );

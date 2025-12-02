@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-900 transition-colors duration-300"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -30,16 +30,17 @@ const About = () => {
         transition={{ duration: 1 }}
         className="max-w-5xl mx-auto space-y-10"
       >
+        {/* Intro */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-            Hi, I'm <span className="text-blue-600 dark:text-blue-400">Tharun Challa</span>
+          <h3 className="text-3xl font-bold text-white mb-4">
+            Hi, I'm <span className="text-blue-500">Tharun Challa</span>
           </h3>
-          <div className="text-gray-600 dark:text-gray-300 text-lg">
+          <div className="text-gray-200 text-lg">
             <Typewriter
               options={{
                 strings: [
@@ -56,35 +57,41 @@ const About = () => {
             />
           </div>
         </motion.div>
+
+        {/* Skills */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">My Toolkit</h4>
+          <h4 className="text-xl font-semibold text-white mb-4">My Toolkit</h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {skills.map(({ label, icon }, idx) => (
               <SkillCard key={label} label={label} icon={icon} delay={idx * 0.1} />
             ))}
           </div>
         </motion.div>
+
+        {/* Tools & Platforms */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">Tools & Platforms</h4>
-          <p className="text-gray-600 dark:text-gray-300">Visual Studio Code, Git, GitHub, Bitbucket</p>
+          <h4 className="text-xl font-semibold text-white mb-2">Tools & Platforms</h4>
+          <p className="text-gray-200">Visual Studio Code, Git, GitHub, Bitbucket</p>
         </motion.div>
+
+        {/* Motivation */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h4 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">What Drives Me</h4>
+          <h4 className="text-xl font-semibold text-white mb-4">What Drives Me</h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <MotivationCard icon="🎨" title="Crafting Elegant UI" text="Designing intuitive, beautiful interfaces with a focus on user experience and detail." />
             <MotivationCard icon="⚡" title="Performance & Scalability" text="Building fast, scalable backends and optimized frontends for a seamless experience." />
@@ -104,10 +111,10 @@ const SkillCard = ({ label, icon, delay }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
     whileHover={{ scale: 1.1, y: -5, boxShadow: "0px 8px 20px rgba(0,0,0,0.2)" }}
-    className="flex flex-col items-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+    className="flex flex-col items-center p-3 bg-gray-800 rounded-lg shadow-md"
   >
     <img src={icon} alt={label} className="w-10 h-10 mb-2" />
-    <span className="text-gray-800 dark:text-white text-sm font-medium">{label}</span>
+    <span className="text-white text-sm font-medium">{label}</span>
   </motion.div>
 );
 
@@ -117,13 +124,13 @@ const MotivationCard = ({ icon, title, text }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition-shadow"
+    className="p-4 bg-gray-800 rounded-lg hover:shadow-md"
   >
     <div className="flex items-center space-x-3 mb-2">
       <div className="text-2xl">{icon}</div>
-      <h5 className="font-semibold text-gray-800 dark:text-white">{title}</h5>
+      <h5 className="font-semibold text-white">{title}</h5>
     </div>
-    <p className="text-gray-600 dark:text-gray-300 text-sm">{text}</p>
+    <p className="text-gray-200 text-sm">{text}</p>
   </motion.div>
 );
 

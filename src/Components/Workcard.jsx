@@ -1,4 +1,7 @@
+"use client";
+
 import Work from "./work";
+import { motion } from "framer-motion";
 
 const projectData = [
     {
@@ -26,15 +29,35 @@ const projectData = [
 
 const WorkCard = () => {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <h1 className="text-4xl font-bold text-center mb-12 text-white">
-            My <span className="text-blue-400">Projects</span>
-        </h1>
-       
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-           {projectData.map(each => <Work user={each} key={each.id} />)}
-       </div>
-    </div>
+    <section className="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+      <div className="container mx-auto max-w-6xl">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold text-center mb-12 text-white"
+        >
+          My <span className="text-blue-400">Projects</span>
+        </motion.h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectData.map((each, index) => (
+            <motion.div
+              key={each.id}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ scale: 1.05, y: -5, boxShadow: "0px 10px 25px rgba(0,0,0,0.3)" }}
+              className="bg-gray-800 rounded-lg shadow-md overflow-hidden border border-gray-700"
+            >
+              <Work user={each} />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
