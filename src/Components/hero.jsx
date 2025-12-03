@@ -110,15 +110,20 @@ const Hero = () => {
               options={{
                 strings: [
                   "Hi! I'm Tharun Challa, a MERN Stack Developer.",
-                  "I specialize in React.js, Node.js & MongoDB.",
-                  "I create fast, responsive, and scalable web apps.",
+                  "I build fast, responsive, and scalable web applications.",
+                  "Passionate about React.js, Node.js, and MongoDB.",
+                  "I love solving real-world problems with clean code.",
+                  "Continuous learning and innovation drive me forward.",
+                  "I craft seamless user experiences that people enjoy."
                 ],
                 autoStart: true,
                 loop: true,
+                delay: 50,
+                deleteSpeed: 60,
+                pauseFor: 1500,
               }}
             />
           </motion.div>
-
           <div className="flex gap-4 mt-6">
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}

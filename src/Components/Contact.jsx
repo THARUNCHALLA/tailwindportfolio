@@ -107,7 +107,7 @@ const ContactPage = () => {
                             <a href="https://maps.app.goo.gl/6voXrnRz7L7Kkwvn7" target="_blank" rel="noreferrer" className="flex items-start hover:text-blue-400 transition-colors">
                                 <FaHome className="text-white mt-1 mr-4 flex-shrink-0" size={20} />
                                 <div>
-                                    <p>2-181 palukurivaripalem</p>
+                                    <p>p.v.palem(V), Nellore(D)</p>
                                     <p>Andhra Pradesh</p>
                                 </div>
                             </a>
