@@ -37,7 +37,6 @@ const About = () => {
         viewport={{ once: true }}
         variants={containerVariants}
       >
-        {/* Intro + Typewriter */}
         <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Hi, I'm <span className="text-blue-400">Tharun Challa</span>
@@ -46,7 +45,7 @@ const About = () => {
             <Typewriter
               options={{
                 strings: [
-                  "I’m a passionate Full Stack Developer with 1.10+ years of experience building robust web apps.",
+                  "I’m a passionate Full Stack Developer with 1.10 years of experience building robust web apps.",
                   "I specialize in React.js, Node.js, Express.js, MongoDB & modern front-end technologies.",
                   "I create fast, responsive, and visually appealing applications.",
                   "Continuous learning and innovation drive me to deliver impactful projects.",
@@ -70,14 +69,10 @@ const About = () => {
             ))}
           </motion.div>
         </motion.div>
-
-        {/* Tools & Platforms */}
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
           <h4 className="text-xl md:text-2xl font-semibold text-white mb-2">Tools & Platforms</h4>
           <p className="text-gray-300 text-md md:text-lg">Visual Studio Code, Git, GitHub, Bitbucket, Postman</p>
         </motion.div>
-
-        {/* Motivations */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="space-y-6">
           <h4 className="text-xl md:text-2xl font-semibold text-white mb-4">What Drives Me</h4>
           <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6" variants={containerVariants}>
@@ -91,8 +86,6 @@ const About = () => {
     </section>
   );
 };
-
-// 3D Tilt Card Component
 const TiltCard = ({ children }) => {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e) => {
@@ -117,7 +110,6 @@ const TiltCard = ({ children }) => {
   );
 };
 
-// Skill Card with 3D Tilt
 const SkillCard = ({ label, icon }) => (
   <TiltCard>
     <div className="flex flex-col items-center p-5 bg-gray-800 rounded-xl shadow-lg transition-all duration-300 hover:bg-gray-700">
@@ -127,7 +119,6 @@ const SkillCard = ({ label, icon }) => (
   </TiltCard>
 );
 
-// Motivation Card with 3D Tilt
 const MotivationCard = ({ icon, title, text }) => (
   <TiltCard>
     <div className="p-5 bg-gray-800 rounded-xl shadow-md transition-all duration-300 hover:bg-gray-700">
