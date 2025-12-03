@@ -79,7 +79,7 @@ const About = () => {
             <MotivationCard icon="🎨" title="Crafting Elegant UI" text="Designing intuitive, beautiful interfaces with focus on UX and detail." />
             <MotivationCard icon="⚡" title="Performance & Scalability" text="Building fast, optimized, and scalable frontends & backends." />
             <MotivationCard icon="🚀" title="Continuous Learning" text="Exploring new technologies and best practices every day." />
-            <MotivationCard icon="🤝" title="Collaboration" text="Working with teams to bring innovative ideas to life." />
+            <MotivationCard icon="🤝" title="Collaboration" text="Working seamlessly with teams to transform creative concepts into successful products." />
           </motion.div>
         </motion.div>
       </motion.div>
