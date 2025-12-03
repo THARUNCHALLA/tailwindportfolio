@@ -76,9 +76,8 @@ const ContactPage = () => {
         setLoading(true);
         try {
             const res = await axios.post(
-                "https://email-bw4f.onrender.com/submit-form",
+                "https://email-aeus.onrender.com/submit-form",
                 data,
-                { withCredentials: true }
             );
             if (res.status === 200) {
                 setPopup({ show: true, message: "Message sent successfully!", type: "success" });
