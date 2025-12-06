@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Header from './Components/Header'
-import Hero from './Components/Hero'
-import About from './Components/About';
-import ExperienceSection from './Components/Experince';
-import WorkCard from './Components/WorkCard';
-import Contact from './Components/Contact';
+import Header from './Components/Header.jsx'
+import Hero from './Components/Hero.jsx'
+import About from './Components/About.jsx';
+import ExperienceSection from './Components/Experince.jsx';
+import WorkCard from './Components/WorkCard.jsx';
+import Contact from './Components/Contact.jsx';
 import './App.css';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
