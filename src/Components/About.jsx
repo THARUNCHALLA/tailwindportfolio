@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-50 dark:to-gray-100 transition-colors duration-500 relative overflow-hidden"
+      className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-50 dark:to-gray-100 transition-colors duration-500 relative overflow-hidden"
     >
       <motion.div
         className="max-w-5xl mx-auto space-y-16"
@@ -37,7 +37,7 @@ const About = () => {
         viewport={{ once: true }}
         variants={containerVariants}
       >
-        <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
           <h3 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900 mb-4">
             Hi, I'm <span className="text-blue-400">Tharun Challa</span>
           </h3>

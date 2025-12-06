@@ -22,7 +22,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-50 dark:to-gray-100 transition-colors duration-500">
+    <section id="home" className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-50 dark:to-gray-100 transition-colors duration-500">
       <Particles
         className="absolute top-0 left-0 w-full h-full z-0"
         options={{
@@ -58,17 +58,17 @@ const Hero = () => {
             </motion.figure>
 
             <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.3 }}
-  className="flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-sm
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-sm
              bg-green-500/20 dark:bg-green-500/30"
->
-  <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-  <span className="text-green-800 dark:text-green-200 text-sm font-medium">
-    Available for work
-  </span>
-</motion.div>
+            >
+              <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span className="text-green-800 dark:text-green-200 text-sm font-medium">
+                Available for work
+              </span>
+            </motion.div>
 
           </div>
 
@@ -145,7 +145,7 @@ const Hero = () => {
             <motion.div
               animate={{ scale: [1, 1.07, 1], rotate: [0, 6, -6, 0] }}
               transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-              className="absolute -bottom-5 -left-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:block hidden"
+              className="absolute -bottom-5 -left-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:hidden"
             >
               <span className="text-gray-300 font-medium">1.10 Years Experience</span>
             </motion.div>
@@ -153,7 +153,7 @@ const Hero = () => {
             <motion.div
               animate={{ scale: [1, 1.07, 1], rotate: [0, -6, 6, 0] }}
               transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-              className="absolute -top-5 -right-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:block hidden"
+              className="absolute -top-5 -right-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:hidden"
             >
               <span className="text-gray-300 font-medium">MERN Stack Developer</span>
             </motion.div>
