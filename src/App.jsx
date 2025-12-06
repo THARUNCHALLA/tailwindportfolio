@@ -4,7 +4,7 @@ import Hero from './Components/Hero'
 import About from './Components/About';
 import ExperienceSection from './Components/Experince';
 import WorkCard from './Components/WorkCard';
-import ContactPage from './Components/Contact';
+import Contact from './Components/Contact';
 import './App.css';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,7 +18,7 @@ function App() {
           <About />
           <ExperienceSection />
           <WorkCard />
-          <ContactPage />
+          <Contact />
         </main>
       </div>
     </div>
