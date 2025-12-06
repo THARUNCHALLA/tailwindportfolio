@@ -58,30 +58,35 @@ const Hero = () => {
             </motion.figure>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-center gap-2 px-3 py-1 bg-green-500/25 rounded-full backdrop-blur-sm"
-            >
-              <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-green-400 text-sm font-medium">Available for work</span>
-            </motion.div>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.3 }}
+  className="flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-sm
+             bg-green-500/20 dark:bg-green-500/30"
+>
+  <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+  <span className="text-green-800 dark:text-green-200 text-sm font-medium">
+    Available for work
+  </span>
+</motion.div>
+
           </div>
 
           <motion.h1
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-white dark:text-gray-900 text-3xl md:text-5xl font-extrabold max-w-xl leading-snug"
+            className="text-gray-50 dark:text-gray-900 text-3xl md:text-5xl font-extrabold max-w-xl leading-snug"
           >
             Building <span className="text-blue-400">modern web experiences</span> that
             impress and perform
           </motion.h1>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="text-gray-200 dark:text-gray-700 text-lg max-w-lg"
+            className="text-gray-300 dark:text-gray-700 text-lg max-w-lg"
           >
             <Typewriter
               options={{
@@ -107,7 +112,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleDownload}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow-2xl font-semibold transition-all duration-300"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white dark:text-gray-50 px-6 py-3 rounded-xl shadow-2xl font-semibold transition-all duration-300"
             >
               Download CV <FiDownload className="w-5 h-5" />
             </motion.button>
@@ -116,7 +121,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToProjects}
-              className="flex items-center gap-2 border border-gray-400 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl shadow-2xl font-semibold transition-all duration-300"
+              className="flex items-center gap-2 border border-gray-400 hover:bg-gray-100 hover:text-black dark:hover:bg-gray-800 dark:hover:text-white text-gray-200 dark:text-gray-900 px-6 py-3 rounded-xl shadow-2xl font-semibold transition-all duration-300"
             >
               My Work <FaArrowDown className="w-5 h-5" />
             </motion.button>
@@ -140,19 +145,18 @@ const Hero = () => {
             <motion.div
               animate={{ scale: [1, 1.07, 1], rotate: [0, 6, -6, 0] }}
               transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-              className="absolute -bottom-5 -left-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:hidden"
+              className="absolute -bottom-5 -left-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:block hidden"
             >
-              <span className="text-gray-200 font-medium">1.10 Years Experience</span>
+              <span className="text-gray-300 font-medium">1.10 Years Experience</span>
             </motion.div>
 
             <motion.div
               animate={{ scale: [1, 1.07, 1], rotate: [0, -6, 6, 0] }}
               transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-              className="absolute -top-5 -right-5 bg-gray-800/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:hidden"
+              className="absolute -top-5 -right-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:block hidden"
             >
-              <span className="text-gray-200 font-medium">MERN Stack Developer</span>
+              <span className="text-gray-300 font-medium">MERN Stack Developer</span>
             </motion.div>
-
           </div>
         </motion.div>
       </div>
