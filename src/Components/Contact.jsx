@@ -159,14 +159,15 @@ const ContactPage = () => {
                                 { name: "email", type: "email", label: "Email address" },
                                 { name: "subject", type: "text", label: "Subject" },
                             ].map(({ name, type, label }) => (
-                                <div key={name} className="relative z-0 w-full mb-5 group">
+                                <div key={name} className="relative z-0 w-full mb-2 group">
                                     <input
                                         type={type}
                                         name={name}
+                                        autoComplete="off"
                                         id={name}
                                         value={data[name]}
                                         onChange={handleChange}
-                                        placeholder=" "
+                                        placeholder=""
                                         required
                                         className="peer block py-2.5 px-0 w-full text-sm md:text-lg text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer-placeholder-shown:border-gray-300 peer-focus:border-blue-600"
                                     />
