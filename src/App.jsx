@@ -3,7 +3,7 @@ import Header from './Components/header.jsx'
 import Hero from './Components/hero.jsx'
 import About from './Components/About.jsx';
 import ExperienceSection from './Components/Experince.jsx';
-import WorkCard from './Components/WorkCard.jsx';
+import WorkCard from './Components/workCard.jsx';
 import Contact from './Components/Contact.jsx';
 import './App.css';
 function App() {
