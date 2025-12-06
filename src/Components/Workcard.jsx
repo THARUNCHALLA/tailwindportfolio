@@ -1,6 +1,6 @@
 "use client";
 
-import Work from "./Work";
+import Work from "./work.jsx";
 import { motion } from "framer-motion";
 
 const projectData = [

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Header from './Components/Header.jsx'
-import Hero from './Components/Hero.jsx'
+import Header from './Components/header.jsx'
+import Hero from './Components/hero.jsx'
 import About from './Components/About.jsx';
 import ExperienceSection from './Components/Experince.jsx';
 import WorkCard from './Components/WorkCard.jsx';
