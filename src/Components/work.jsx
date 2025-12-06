@@ -19,7 +19,6 @@ const Work = ({ user }) => {
         whileHover={{ scale: 1.02 }}
         className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
       >
-        {/* Image */}
         <div className="h-48 overflow-hidden rounded-t-2xl">
           <img
             src={user.image1}
@@ -28,7 +27,6 @@ const Work = ({ user }) => {
           />
         </div>
 
-        {/* Content */}
         <div className="p-6">
           <h3 className="text-xl font-bold text-white mb-2">
             {user.title}
@@ -37,8 +35,6 @@ const Work = ({ user }) => {
           <p className="text-gray-300 text-sm mb-4 leading-relaxed">
             {user.information}
           </p>
-
-          {/* Tech Stack */}
           <div className="flex flex-wrap gap-2 mb-4">
             {user.tech.map((item, i) => (
               <span
@@ -49,8 +45,6 @@ const Work = ({ user }) => {
               </span>
             ))}
           </div>
-
-          {/* Buttons */}
           <div className="flex justify-between items-center">
             <a
               href={user.view}

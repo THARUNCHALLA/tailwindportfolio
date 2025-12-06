@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-50 dark:to-gray-100 transition-colors duration-500 relative overflow-hidden"
     >
       <motion.div
         className="max-w-5xl mx-auto space-y-16"
@@ -38,10 +38,10 @@ const About = () => {
         variants={containerVariants}
       >
         <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-900 mb-4">
             Hi, I'm <span className="text-blue-400">Tharun Challa</span>
           </h3>
-          <div className="text-gray-200 text-lg md:text-xl">
+          <div className="text-gray-200 dark:text-gray-700 text-lg md:text-xl">
             <Typewriter
               options={{
                 strings: [
@@ -59,33 +59,19 @@ const About = () => {
             />
           </div>
         </motion.div>
-
-        {/* Skills */}
         <motion.div className="space-y-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-          <h4 className="text-xl md:text-2xl font-semibold text-white mb-6">My Toolkit</h4>
+          <h4 className="text-xl md:text-2xl font-semibold text-white dark:text-gray-900 mb-6">My Toolkit</h4>
           <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" variants={containerVariants}>
             {skills.map(({ label, icon }) => (
               <SkillCard key={label} label={label} icon={icon} />
             ))}
           </motion.div>
         </motion.div>
-        <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-          <h4 className="text-xl md:text-2xl font-semibold text-white mb-2">Tools & Platforms</h4>
-          <p className="text-gray-300 text-md md:text-lg">Visual Studio Code, Git, GitHub, Bitbucket, Postman</p>
-        </motion.div>
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="space-y-6">
-          <h4 className="text-xl md:text-2xl font-semibold text-white mb-4">What Drives Me</h4>
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6" variants={containerVariants}>
-            <MotivationCard icon="🎨" title="Crafting Elegant UI" text="Designing intuitive, beautiful interfaces with focus on UX and detail." />
-            <MotivationCard icon="⚡" title="Performance & Scalability" text="Building fast, optimized, and scalable frontends & backends." />
-            <MotivationCard icon="🚀" title="Continuous Learning" text="Exploring new technologies and best practices every day." />
-            <MotivationCard icon="🤝" title="Collaboration" text="Working seamlessly with teams to transform creative concepts into successful products." />
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );
 };
+
 const TiltCard = ({ children }) => {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e) => {
@@ -112,21 +98,9 @@ const TiltCard = ({ children }) => {
 
 const SkillCard = ({ label, icon }) => (
   <TiltCard>
-    <div className="flex flex-col items-center p-5 bg-gray-800 rounded-xl shadow-lg transition-all duration-300 hover:bg-gray-700">
+    <div className="flex flex-col items-center p-5 bg-gray-800 dark:bg-gray-200 rounded-xl shadow-lg transition-all duration-300 hover:bg-gray-700 dark:hover:bg-gray-300">
       <img src={icon} alt={label} className="w-14 h-14 mb-2" />
-      <span className="text-white text-sm md:text-base font-medium">{label}</span>
-    </div>
-  </TiltCard>
-);
-
-const MotivationCard = ({ icon, title, text }) => (
-  <TiltCard>
-    <div className="p-5 bg-gray-800 rounded-xl shadow-md transition-all duration-300 hover:bg-gray-700">
-      <div className="flex items-center space-x-3 mb-2">
-        <div className="text-2xl">{icon}</div>
-        <h5 className="font-semibold text-white text-md md:text-lg">{title}</h5>
-      </div>
-      <p className="text-gray-300 text-sm md:text-base">{text}</p>
+      <span className="text-white dark:text-gray-900 text-sm md:text-base font-medium">{label}</span>
     </div>
   </TiltCard>
 );

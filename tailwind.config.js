@@ -1,12 +1,18 @@
-import tailwindScrollbar from "tailwind-scrollbar"
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  darkMode: 'class', // enable class-based dark mode
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brandBlue: '#0ea5e9',
+      },
+      fontFamily: {
+        ballet: ['Ballet', 'cursive'],
+      },
+    },
   },
-  plugins: [tailwindScrollbar],
-}
+  plugins: [],
+};
