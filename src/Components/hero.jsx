@@ -51,7 +51,7 @@ const Hero = () => {
               className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500 shadow-xl"
             >
               <img
-                src="/Assets/tharunchalla.jpg"
+                src="/Assets/Tharunchalla.jpg"
                 alt="Tharun Challa"
                 className="w-full h-full object-cover"
               />
@@ -137,7 +137,7 @@ const Hero = () => {
           <div className="relative">
             <div className="w-[320px] h-[320px] rounded-full overflow-hidden shadow-2xl border-4 border-blue-500/40 relative">
               <img
-                src="/Assets/tharunchalla.jpg"
+                src="/Assets/Tharunchalla.jpg"
                 alt="Tharun Challa"
                 className="w-full h-full object-cover"
               />
