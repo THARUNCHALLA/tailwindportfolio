@@ -23,8 +23,6 @@ const Header = ({ toggleTheme, darkMode }) => {
                     >
                         {darkMode ? "🌙" : "☀️"}
                     </button>
-
-                    {/* Hamburger */}
                     <button className="menu-btn md:hidden" onClick={handleClick}>
                         <span className="material-symbols-rounded">
                             {open ? "close" : "menu"}

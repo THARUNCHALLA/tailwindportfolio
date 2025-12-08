@@ -154,8 +154,6 @@ const ContactPage = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Right side: Contact Form */}
                     <div className="bg-gray-800 dark:bg-gray-100 p-8 rounded-lg shadow-lg relative">
                         {loading && (
                             <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 dark:bg-gray-200/80 z-10 rounded-lg">
