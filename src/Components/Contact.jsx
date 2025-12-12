@@ -87,15 +87,15 @@ const ContactPage = () => {
                             </h2>
                             <div className="space-y-6">
                                 <a
-                                    href="https://maps.app.goo.gl/6voXrnRz7L7Kkwvn7"
+                                    href="https://maps.app.goo.gl/1hHtQEpk5DBRrEac8"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="flex items-start hover:text-blue-400 transition-colors"
                                 >
                                     <FaHome className="text-white dark:text-gray-900 mt-1 mr-4 flex-shrink-0" size={20} />
                                     <div>
-                                        <p>p.v.palem(V), Nellore(D)</p>
-                                        <p>Andhra Pradesh</p>
+                                        <p>BTM Layout , Bengaluru</p>
+                                        <p>Karnataka</p>
                                     </div>
                                 </a>
                                 <a

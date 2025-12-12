@@ -51,7 +51,7 @@ const Hero = () => {
               className="w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500 shadow-xl"
             >
               <img
-                src="/Assets/Tharunchalla.jpg"
+                src="/Assets/challaTharun.jpeg"
                 alt="Tharun Challa"
                 className="w-full h-full object-cover"
               />
@@ -137,7 +137,7 @@ const Hero = () => {
           <div className="relative">
             <div className="w-[320px] h-[320px] rounded-full overflow-hidden shadow-2xl border-4 border-blue-500/40 relative">
               <img
-                src="/Assets/Tharunchalla.jpg"
+                src="/Assets/challaTharun.jpeg"
                 alt="Tharun Challa"
                 className="w-full h-full object-cover"
               />
@@ -147,9 +147,8 @@ const Hero = () => {
               transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
               className="absolute -bottom-5 -left-5 bg-gray-900/80 backdrop-blur-sm p-3 rounded-lg shadow-lg border border-gray-700 dark:hidden"
             >
-              <span className="text-gray-300 font-medium">1.10 Years Experience</span>
+              <span className="text-gray-300 font-medium">2 Years Experience</span>
             </motion.div>
-
             <motion.div
               animate={{ scale: [1, 1.07, 1], rotate: [0, -6, 6, 0] }}
               transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}

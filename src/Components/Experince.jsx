@@ -8,22 +8,30 @@ const experienceData = [
     projects: [
       {
         name: "Crediwatch App Website",
-        tech: "ReactJS, CSS, Bootstrap, Redux",
+        tech: "ReactJS, CSS, Bootstrap, RTK, RTKQuery",
         bullets: [
-          "Implemented lazy loading of React components and advanced code-splitting strategies, reducing load times.",
-          "Enhanced state management using Redux Toolkit Query.",
-          "Optimized caching strategies and asset delivery.",
-          "Maintained a scalable folder structure following best practices.",
-          "Developed reusable React components with a modular design."
+          "Implemented lazy loading and advanced code-splitting techniques to reduce initial load time and improve overall application performance.",
+          "Utilized Redux Toolkit Query (RTK Query) for optimized state management, efficient data fetching, and seamless API integration.",
+          "Improved application speed through enhanced caching strategies, optimized asset delivery, and build-level performance tuning.",
+          "Designed and maintained a scalable, modular folder structure aligned with industry best practices for long-term maintainability.",
+          "Built reusable, modular, and high-quality React UI components, ensuring consistency across the application.",
+          "Collaborated closely with the Backend Team to integrate APIs, solve data-related challenges, and improve system communication.",
+          "Worked with the QA/Testing Team to validate features, reproduce bugs, and support end-to-end testing activities.",
+          "Acted as Project Coordinator, managing cross-team communication, tracking progress, and ensuring timely delivery of project milestones.",
+          "Followed Agile methodologies, participating in sprint planning, daily standups, reviews, and retrospectives to keep development aligned and efficient.",
+          "Contributed to technical and functional documentation, improving team onboarding and project clarity.",
+          "Supported deployment cycles by coordinating with DevOps, monitoring releases, and ensuring smooth post-deployment performance."
         ]
+
       },
       {
         name: "Crediwatch Report Mailers Generation",
-        tech: "Handlebars.js, Node.js, Express.js, MongoDB",
+        tech: "Handlebars.js, Node.js, Express.js, MongoDB, Tailwindcss",
         bullets: [
-          "Developed dynamic and reusable email templates using Handlebars.js.",
-          "Retrieved data from AWS S3 and generated reports in PDF, Excel, and CSV formats.",
-          "Integrated MongoDB aggregation pipelines to fetch and transform complex data structures."
+          "Developed dynamic and reusable email templates using Handlebars.js for automated backend-driven notifications.",
+          "Retrieved and processed data from AWS S3, generating reports in PDF, Excel, and CSV formats through backend services.",
+          "Implemented MongoDB aggregation pipelines to fetch, filter, and transform complex data structures efficiently.",
+          "Designed and maintained scalable backend architecture using Node.js and MongoDB.",
         ]
       }
     ]

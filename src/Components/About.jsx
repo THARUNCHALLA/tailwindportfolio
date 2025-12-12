@@ -45,7 +45,7 @@ const About = () => {
             <Typewriter
               options={{
                 strings: [
-                  "I’m a passionate Full Stack Developer with 1.10 years of experience building robust web apps.",
+                  "I’m a passionate Full Stack Developer with 2 years of experience building robust web apps.",
                   "I specialize in React.js, Node.js, Express.js, MongoDB & modern front-end technologies.",
                   "I create fast, responsive, and visually appealing applications.",
                   "Continuous learning and innovation drive me to deliver impactful projects.",
